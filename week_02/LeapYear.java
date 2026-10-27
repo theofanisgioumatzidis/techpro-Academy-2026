@@ -11,16 +11,18 @@ public class LeapYear {
 
         boolean isLeap = false;
 
-        if ( (theInput%4) != 0) {
+        if ( (theInput%400) == 0) {
             isLeap = true;
-            if ( (theInput%100) != 0) {
-                isLeap = false;
-                if ((theInput%400) != 0) {
-                    isLeap = true;
-                }
-            }
+        } else if ( (theInput%100) == 0) {
+            isLeap = false;
+        } else if ( (theInput%4) == 0) {
+            isLeap = true;
+        } else {
+            isLeap = false;
+        }
 
-        } 
+
+        
         if (isLeap) {
             System.out.println("Its leap");
         } else {
@@ -29,5 +31,6 @@ public class LeapYear {
 
         scanner.close();
     }
-    
 }
+    
+
